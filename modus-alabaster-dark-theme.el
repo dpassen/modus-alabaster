@@ -223,6 +223,25 @@ See `modus-themes-common-palette-overrides' for the format."
   :group 'modus-alabaster
   :type '(repeat (list symbol (choice symbol string))))
 
+;; Alabaster deliberately avoids bold and italic syntax.  The dark scheme
+;; keeps matching brackets at the normal foreground and underlines them with
+;; its active colour.  Regex escapes receive the upstream translucent fill.
+(defconst modus-alabaster-dark-custom-faces
+  '(
+    '(modus-themes-bold ((t (:weight normal))))
+    '(modus-themes-slant ((t (:slant normal))))
+    '(show-paren-match
+      ((t (:foreground "#CECECE" :background unspecified
+           :underline (:color "#CD974B" :style line)))))
+    '(show-paren-match-expression
+      ((t (:foreground "#CECECE" :background unspecified
+           :underline (:color "#CD974B" :style line)))))
+    '(font-lock-regexp-grouping-backslash
+      ((t (:foreground "#CECECE" :background "#1D2324" :weight normal))))
+    '(font-lock-warning-face
+      ((t (:foreground "#CC3333" :background "#2B1D1E" :weight normal)))))
+  "Custom face specifications for `modus-alabaster-dark'.")
+
 ;;;###theme-autoload
 (modus-themes-theme
  'modus-alabaster-dark
@@ -231,25 +250,8 @@ See `modus-themes-common-palette-overrides' for the format."
  'dark
  'modus-themes-vivendi-palette
  'modus-alabaster-dark-palette
- 'modus-alabaster-dark-palette-overrides)
-
-;; Alabaster deliberately avoids bold and italic syntax.  The dark scheme
-;; keeps matching brackets at the normal foreground and underlines them with
-;; its active colour.  Regex escapes receive the upstream translucent fill.
-(custom-theme-set-faces
- 'modus-alabaster-dark
- '(modus-themes-bold ((t (:weight normal))))
- '(modus-themes-slant ((t (:slant normal))))
- '(show-paren-match
-   ((t (:foreground "#CECECE" :background unspecified
-        :underline (:color "#CD974B" :style line)))))
- '(show-paren-match-expression
-   ((t (:foreground "#CECECE" :background unspecified
-        :underline (:color "#CD974B" :style line)))))
- '(font-lock-regexp-grouping-backslash
-   ((t (:foreground "#CECECE" :background "#1D2324" :weight normal))))
- '(font-lock-warning-face
-   ((t (:foreground "#CC3333" :background "#2B1D1E" :weight normal)))))
+ 'modus-alabaster-dark-palette-overrides
+ 'modus-alabaster-dark-custom-faces)
 
 (provide-theme 'modus-alabaster-dark)
 ;;; modus-alabaster-dark.el ends here

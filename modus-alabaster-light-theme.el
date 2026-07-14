@@ -224,6 +224,20 @@ See `modus-themes-common-palette-overrides' for the format."
   :group 'modus-alabaster
   :type '(repeat (list symbol (choice symbol string))))
 
+;; Alabaster deliberately avoids bold and italic syntax.  Matching brackets
+;; use the upstream active foreground and underline, not a filled background.
+(defconst modus-alabaster-light-custom-faces
+  '(
+    '(modus-themes-bold ((t (:weight normal))))
+    '(modus-themes-slant ((t (:slant normal))))
+    '(show-paren-match
+      ((t (:foreground "#007ACC" :background unspecified :underline t))))
+    '(show-paren-match-expression
+      ((t (:foreground "#007ACC" :background unspecified :underline t))))
+    '(font-lock-warning-face
+      ((t (:foreground "#AA3731" :background "#E8D1CF" :weight normal)))))
+  "Custom face specifications for `modus-alabaster-light'.")
+
 ;;;###theme-autoload
 (modus-themes-theme
  'modus-alabaster-light
@@ -232,20 +246,8 @@ See `modus-themes-common-palette-overrides' for the format."
  'light
  'modus-themes-operandi-palette
  'modus-alabaster-light-palette
- 'modus-alabaster-light-palette-overrides)
-
-;; Alabaster deliberately avoids bold and italic syntax.  Matching brackets
-;; use the upstream active foreground and underline, not a filled background.
-(custom-theme-set-faces
- 'modus-alabaster-light
- '(modus-themes-bold ((t (:weight normal))))
- '(modus-themes-slant ((t (:slant normal))))
- '(show-paren-match
-   ((t (:foreground "#007ACC" :background unspecified :underline t))))
- '(show-paren-match-expression
-   ((t (:foreground "#007ACC" :background unspecified :underline t))))
- '(font-lock-warning-face
-   ((t (:foreground "#AA3731" :background "#E8D1CF" :weight normal)))))
+ 'modus-alabaster-light-palette-overrides
+ 'modus-alabaster-light-custom-faces)
 
 (provide-theme 'modus-alabaster-light)
 ;;; modus-alabaster-light.el ends here
