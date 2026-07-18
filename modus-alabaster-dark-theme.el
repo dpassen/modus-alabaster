@@ -164,22 +164,26 @@
      (bg-line-number-inactive "#0E1415")
      (bg-line-number-active   "#1D2324")
 
-     ;; Upstream diff colours are HSL values, represented exactly in RGB.
-     (bg-added         "#0E1415")
-     (bg-added-faint   "#0E1415")
-     (bg-added-refine  "#0E1415")
+     ;; Diff line backgrounds tint bg-main toward each state's accent, mirroring
+     ;; the light theme: the base/-highlight background is the accent composited
+     ;; over bg-main at alpha 0.2, with -faint (0.1) and -refine (0.3) bracketing
+     ;; it.  Without a background magit's *-diff-*-highlight faces were invisible;
+     ;; the fringe and foreground stay the vivid upstream accents.
+     (bg-added         "#29392B")
+     (bg-added-faint   "#1C2620")
+     (bg-added-refine  "#374B36")
      (bg-added-fringe  "#6ABF40")
      (fg-added         "#6ABF40")
      (fg-added-intense "#6ABF40")
-     (bg-removed         "#0E1415")
-     (bg-removed-faint   "#0E1415")
-     (bg-removed-refine  "#0E1415")
+     (bg-removed         "#341A1B")
+     (bg-removed-faint   "#211718")
+     (bg-removed-refine  "#471D1E")
      (bg-removed-fringe  "#D2322D")
      (fg-removed         "#D2322D")
      (fg-removed-intense "#D2322D")
-     (bg-changed         "#0E1415")
-     (bg-changed-faint   "#0E1415")
-     (bg-changed-refine  "#0E1415")
+     (bg-changed         "#383D2D")
+     (bg-changed-faint   "#232821")
+     (bg-changed-refine  "#4D5139")
      (bg-changed-fringe  "#EC8013")
      (fg-changed         "#EC8013")
      (fg-changed-intense "#EC8013")
