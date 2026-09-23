@@ -175,16 +175,6 @@
     (mail-other     fg-main))
   "Common palette mappings for the Alabaster Modus themes.")
 
-(defcustom modus-alabaster-common-palette-overrides nil
-  "Palette overrides shared by all Modus Alabaster themes.
-Use this for semantic mappings that should apply to both light and
-dark variants.  Per-theme overrides are preferred for colour values,
-as those will differ between light and dark.
-
-See `modus-themes-common-palette-overrides' for the format."
-  :group 'modus-alabaster
-  :type '(repeat (list symbol (choice symbol string))))
-
 (defconst modus-alabaster-with-properties
   '((modus-alabaster-light modus-alabaster "Alabaster light palette on modus-operandi." light modus-themes-operandi-palette modus-alabaster-light-palette modus-alabaster-light-palette-overrides)
     (modus-alabaster-dark modus-alabaster "Alabaster dark palette on modus-vivendi." dark modus-themes-vivendi-palette modus-alabaster-dark-palette modus-alabaster-dark-palette-overrides))

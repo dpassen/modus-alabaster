@@ -218,7 +218,7 @@
 (defcustom modus-alabaster-dark-palette-overrides nil
   "Palette overrides for `modus-alabaster-dark'.
 Entries here take precedence over both the theme palette and
-`modus-alabaster-common-palette-overrides'.
+`modus-themes-common-palette-overrides'.
 See `modus-themes-common-palette-overrides' for the format."
   :group 'modus-alabaster
   :type '(repeat (list symbol (choice symbol string))))
