@@ -164,22 +164,26 @@
      (bg-line-number-inactive "#0E1415")
      (bg-line-number-active   "#1D2324")
 
-     ;; Upstream diff colours are HSL values, represented exactly in RGB.
-     (bg-added         "#0E1415")
+     ;; As in the light theme, only the current hunk gets a background: the
+     ;; -faint slots stay at bg-main, bg-added/-removed/-changed are the accent
+     ;; over bg-main at alpha 0.2 and -refine at alpha 0.3, so magit's
+     ;; *-diff-*-highlight faces are visible.  The fringe and foreground stay
+     ;; the vivid upstream accents.
+     (bg-added         "#29392B")
      (bg-added-faint   "#0E1415")
-     (bg-added-refine  "#0E1415")
+     (bg-added-refine  "#374B36")
      (bg-added-fringe  "#6ABF40")
      (fg-added         "#6ABF40")
      (fg-added-intense "#6ABF40")
-     (bg-removed         "#0E1415")
+     (bg-removed         "#341A1B")
      (bg-removed-faint   "#0E1415")
-     (bg-removed-refine  "#0E1415")
+     (bg-removed-refine  "#471D1E")
      (bg-removed-fringe  "#D2322D")
      (fg-removed         "#D2322D")
      (fg-removed-intense "#D2322D")
-     (bg-changed         "#0E1415")
+     (bg-changed         "#383D2D")
      (bg-changed-faint   "#0E1415")
-     (bg-changed-refine  "#0E1415")
+     (bg-changed-refine  "#4D5139")
      (bg-changed-fringe  "#EC8013")
      (fg-changed         "#EC8013")
      (fg-changed-intense "#EC8013")

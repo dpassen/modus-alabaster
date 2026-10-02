@@ -165,22 +165,28 @@
      (bg-line-number-inactive "#F7F7F7")
      (bg-line-number-active   "#F0F0F0")
 
-     ;; Upstream diff colours are HSL values, represented exactly in RGB.
-     (bg-added         "#F7F7F7")
+     ;; Upstream Alabaster styles diffs by foreground only, so the -faint
+     ;; slots (magit's non-highlighted hunks) stay at bg-main.  The current
+     ;; hunk gets a tint, though, or magit's *-diff-*-highlight faces would be
+     ;; invisible: bg-added/-removed/-changed are the accent over bg-main at
+     ;; alpha 0.2 (the same recipe as bg-red-subtle above, which bg-removed
+     ;; matches exactly) and -refine at alpha 0.3.  The fringe and foreground
+     ;; stay the vivid upstream accents.
+     (bg-added         "#D3E2CD")
      (bg-added-faint   "#F7F7F7")
-     (bg-added-refine  "#F7F7F7")
+     (bg-added-refine  "#C1D7B9")
      (bg-added-fringe  "#6ABF40")
      (fg-added         "#6ABF40")
      (fg-added-intense "#6ABF40")
-     (bg-removed         "#F7F7F7")
+     (bg-removed         "#E8D1CF")
      (bg-removed-faint   "#F7F7F7")
-     (bg-removed-refine  "#F7F7F7")
+     (bg-removed-refine  "#E0BDBC")
      (bg-removed-fringe  "#D2322D")
      (fg-removed         "#D2322D")
      (fg-removed-intense "#D2322D")
-     (bg-changed         "#F7F7F7")
+     (bg-changed         "#F9EBD8")
      (bg-changed-faint   "#F7F7F7")
-     (bg-changed-refine  "#F7F7F7")
+     (bg-changed-refine  "#F9E5C9")
      (bg-changed-fringe  "#EC8013")
      (fg-changed         "#EC8013")
      (fg-changed-intense "#EC8013")
